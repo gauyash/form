@@ -176,7 +176,8 @@ footer {
 .plan {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
+  margin-top: 5rem;
 
   @media(min-width:880px){
     &{
@@ -184,7 +185,7 @@ footer {
       flex-wrap: wrap;
     }
   }
-  .plan-box {
+  .card-box {
     position: relative;
     border: 2px solid var(--Light-gray);
     padding: 1.1rem 1rem;
@@ -194,7 +195,6 @@ footer {
       &{
         width: 30%;
         flex-direction: column;
-        margin-top: 4rem;
         height: 18rem;
         justify-content: space-around;
         align-items: flex-start;
@@ -203,10 +203,10 @@ footer {
       }
     }
 
-    .plan-title {
+    .card-title {
       color: var(--Marine-blue);
     }
-    .plan-price {
+    .card-price {
       color: var(--Cool-gray);
     }
   }
@@ -247,6 +247,29 @@ footer {
       border-radius: 50%;
       background-color: var(--White);
       transition: all 200ms ease-in-out;
+    }
+  }
+}
+
+.add-ons{
+  gap: 0;
+  gap: 3rem;
+  .card-box{
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2rem 1.5rem;
+    margin-top: 0;
+
+    input{
+      width: 2rem;
+      height: 2rem;
+    }
+
+    & > div{
+      width: 100%;
     }
   }
 }

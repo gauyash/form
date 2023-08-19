@@ -4,27 +4,27 @@ const FormPlan = () => {
   return (
     <form className="form-plan">
       <div className="plan">
-        <div className="plan-box flex rounded-2xl gap-5">
+        <div className="card-box flex rounded-2xl gap-5">
           <img src="/assets/images/icon-arcade.svg" alt="" />
           <div className="flex flex-col">
-            <span className="plan-title font-semibold text-3xl">Arcade</span>
-            <span className="plan-price">$9/mo</span>
+            <span className="card-title font-semibold text-3xl">Arcade</span>
+            <span className="card-price">$9/mo</span>
           </div>
         </div>
 
-        <div className="plan-box flex rounded-2xl gap-5">
+        <div className="card-box flex rounded-2xl gap-5">
           <img src="/assets/images/icon-advanced.svg" alt="" />
           <div className="flex flex-col">
-            <span className="plan-title font-semibold text-3xl">Advance</span>
-            <span className="plan-price">$12/mo</span>
+            <span className="card-title font-semibold text-3xl">Advance</span>
+            <span className="card-price">$12/mo</span>
           </div>
         </div>
 
-        <div className="plan-box flex rounded-2xl gap-5">
+        <div className="card-box flex rounded-2xl gap-5">
           <img src="/assets/images/icon-pro.svg" alt="" />
           <div className="flex flex-col">
-            <span className="plan-title font-semibold text-3xl">Pro</span>
-            <span className="plan-price">$15/mo</span>
+            <span className="card-title font-semibold text-3xl">Pro</span>
+            <span className="card-price">$15/mo</span>
           </div>
         </div>
       </div>
