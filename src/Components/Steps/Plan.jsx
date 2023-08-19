@@ -1,6 +1,6 @@
 import React from "react";
 import StepInfo from "../StepInfo";
-import FormPlan from "./Form/FormPlan";
+import FormPlan from "../Form/FormPlan";
 
 const Plan = () => {
   return (
@@ -10,7 +10,7 @@ const Plan = () => {
         title="You have the option of monthly or yearly billing."
       />
 
-     <FormPlan />
+      <FormPlan />
     </div>
   );
 };

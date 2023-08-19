@@ -1,6 +1,6 @@
 import React from "react";
 import StepInfo from "../StepInfo";
-import FormPersonal from "./Form/FormPersonal";
+import FormPersonal from "../Form/FormPersonal";
 
 const PersonalInfo = () => {
   return (
@@ -10,7 +10,7 @@ const PersonalInfo = () => {
         title="Please provide your name, email address, and phone number."
       />
 
-      <FormPersonal />
+    <FormPersonal />
     </div>
   );
 };
