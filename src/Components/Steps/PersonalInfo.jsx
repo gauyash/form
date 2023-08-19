@@ -1,15 +1,18 @@
-import React from 'react'
-import Form from '../Form'
+import React from "react";
+import StepInfo from "../StepInfo";
+import FormPersonal from "./Form/FormPersonal";
 
 const PersonalInfo = () => {
   return (
-    <div className='box mx-auto rounded-xl'>
-      <h1 className='text-5xl font-bold mb-3'>Personal info</h1>
-      <p>Please provide your name, email address, and phone number</p>
+    <div className="box mx-auto rounded-lg">
+      <StepInfo
+        heading="Personal info"
+        title="Please provide your name, email address, and phone number."
+      />
 
-      <Form />
+      <FormPersonal />
     </div>
-  )
-}
+  );
+};
 
-export default PersonalInfo
+export default PersonalInfo;
