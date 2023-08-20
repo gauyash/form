@@ -4,7 +4,7 @@ const StepInfo = ({heading,title}) => {
   return (
     <>
       <h1 className="text-5xl font-bold mb-3">{heading}</h1>
-      <p>{title}</p>
+      <p className="text-3xl">{title}</p>
     </>
   );
 };

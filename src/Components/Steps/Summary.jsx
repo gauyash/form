@@ -1,20 +1,20 @@
 import React from "react";
 import StepInfo from "../StepInfo";
-import FormPlan from "../Form/FormPlan";
+import Bill from "../Bill";
 import Footer from "../Footer";
 
-const Plan = () => {
+const Summary = () => {
   return (
     <div className="box h-full  rounded-lg">
       <StepInfo
-        heading="Select your plan"
-        title="You have the option of monthly or yearly billing."
+        heading="Finishing up"
+        title="Double-check everything looks OK before confirming."
       />
 
-      <FormPlan />
+      <Bill />
       <Footer />
     </div>
   );
 };
 
-export default Plan;
+export default Summary;
