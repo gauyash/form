@@ -1,7 +1,7 @@
 import React from "react";
 import StepInfo from "../StepInfo";
 import FormAddOns from "../Form/FormAddOns";
-import Footer from "../Footer";
+import { Link } from "react-router-dom";
 const AddOns = () => {
   return (
     <div className="box h-full  rounded-lg">
@@ -10,7 +10,11 @@ const AddOns = () => {
         title="Add-ons help enhance your gaming experience."
       />
       <FormAddOns />
-      <Footer />
+      <footer className="mt-32">
+        <Link to="/summary" className="p-4 px-8 font-medium rounded-lg">
+          Next Step
+        </Link>
+      </footer>
     </div>
   );
 };

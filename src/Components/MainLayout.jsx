@@ -7,9 +7,7 @@ const MainLayout = () => {
     <div className="container-custom mx-auto rounded-2xl">
       <Header />
 
-      <div className="sub-container">
         <Outlet />
-      </div>
     </div>
   );
 };

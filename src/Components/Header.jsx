@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 const Header = () => {
+  const activeStep = {
+    backgroundColor: "var(--Light-blue)",
+    color: "var(--Marine-blue)",
+  };
+
+
   return (
     <header className="flex">
       <div className="flex gap-12 progress-indicator-box">
@@ -8,6 +14,7 @@ const Header = () => {
           <NavLink
             className="font-bold progress-indicator rounded-full flex justify-center items-center"
             to="/"
+             style={({ isActive }) => isActive ? activeStep : null}
           >
             1
           </NavLink>
@@ -19,7 +26,8 @@ const Header = () => {
         <div className="sub-box">
           <NavLink
             className="font-bold progress-indicator rounded-full flex justify-center items-center"
-            to="/"
+            to="/plan"
+             style={({ isActive }) => isActive ? activeStep : null}
           >
             2
           </NavLink>
@@ -31,7 +39,8 @@ const Header = () => {
         <div className="sub-box">
           <NavLink
             className="font-bold progress-indicator rounded-full flex justify-center items-center"
-            to="/"
+            to="/add-ons"
+             style={({ isActive }) => isActive ? activeStep : null}
           >
             3
           </NavLink>
@@ -43,7 +52,8 @@ const Header = () => {
         <div className="sub-box">
           <NavLink
             className="font-bold progress-indicator rounded-full flex justify-center items-center"
-            to="/"
+            to="/summary"
+             style={({ isActive }) => isActive ? activeStep : null}
           >
             4
           </NavLink>

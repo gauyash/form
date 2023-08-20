@@ -1,8 +1,7 @@
 import React from "react";
 import StepInfo from "../StepInfo";
 import Bill from "../Bill";
-import Footer from "../Footer";
-
+import { Link } from "react-router-dom";
 const Summary = () => {
   return (
     <div className="box h-full  rounded-lg">
@@ -12,7 +11,11 @@ const Summary = () => {
       />
 
       <Bill />
-      <Footer />
+      <footer className="mt-32">
+        <Link to="/thankyou" className="p-4 px-8 font-medium rounded-lg">
+          Next Step
+        </Link>
+      </footer>
     </div>
   );
 };
