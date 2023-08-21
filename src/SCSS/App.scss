@@ -139,7 +139,7 @@ footer {
     }
   }
 
-  a {
+  button {
     background-color: var(--Marine-blue);
     color: var(--Light-gray);
     transition: background-color 0.3s ease-in-out;
@@ -169,6 +169,7 @@ footer {
     border: 2px solid var(--Light-gray);
     padding: 1.1rem 1rem;
     align-items: center;
+    cursor: pointer;
 
     @media (min-width: 880px) {
       & {
@@ -278,3 +279,7 @@ footer {
 }
 
 
+.selected{
+  background-color: var(--Magnolia);
+  border-color: var(--Pastel-blue);
+}

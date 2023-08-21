@@ -1,10 +1,15 @@
 import React from "react";
 
-const FormPlan = () => {
+const FormPlan = ({ formData, handlePlanSelection, handleSubmit }) => {
   return (
     <form className="form-plan">
       <div className="plan">
-        <div className="card-box flex rounded-2xl gap-5">
+        <div
+          onClick={() => handlePlanSelection("arcade")}
+          className={`card-box flex rounded-2xl gap-5 ${
+            formData.plan === "arcade" ? "selected" : ""
+          }`}
+        >
           <img src="/assets/images/icon-arcade.svg" alt="" />
           <div className="flex flex-col">
             <span className="card-title font-semibold text-3xl">Arcade</span>
@@ -12,7 +17,12 @@ const FormPlan = () => {
           </div>
         </div>
 
-        <div className="card-box flex rounded-2xl gap-5">
+        <div
+          onClick={() => handlePlanSelection("advance")}
+          className={`card-box flex rounded-2xl gap-5 ${
+            formData.plan === "advance" ? "selected" : ""
+          }`}
+        >
           <img src="/assets/images/icon-advanced.svg" alt="" />
           <div className="flex flex-col">
             <span className="card-title font-semibold text-3xl">Advance</span>
@@ -20,7 +30,12 @@ const FormPlan = () => {
           </div>
         </div>
 
-        <div className="card-box flex rounded-2xl gap-5">
+        <div
+          onClick={() => handlePlanSelection("pro")}
+          className={`card-box flex rounded-2xl gap-5 ${
+            formData.plan === "pro" ? "selected" : ""
+          }`}
+        >
           <img src="/assets/images/icon-pro.svg" alt="" />
           <div className="flex flex-col">
             <span className="card-title font-semibold text-3xl">Pro</span>
@@ -37,6 +52,14 @@ const FormPlan = () => {
         </div>
         <p>Yearly</p>
       </div>
+      <footer className="mt-32">
+        <button
+          onClick={handleSubmit}
+          className="p-4 px-8 font-medium rounded-lg"
+        >
+          Next Step
+        </button>
+      </footer>
     </form>
   );
 };

@@ -1,8 +1,11 @@
 import React from "react";
 import StepInfo from "../StepInfo";
 import FormPersonal from "../Form/FormPersonal";
-import { Link } from "react-router-dom";
-const PersonalInfo = () => {
+const PersonalInfo = ({formData,handleChange,handleSubmit}) => {
+
+  console.log(formData);
+
+
   return (
     <div className="box rounded-lg">
       <div>
@@ -11,13 +14,9 @@ const PersonalInfo = () => {
           title="Please provide your name, email address, and phone number."
         />
 
-        <FormPersonal />
+        <FormPersonal formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
       </div>
-      <footer className="mt-32">
-        <Link to="/plan" className="p-4 px-8 font-medium rounded-lg">
-          Next Step
-        </Link>
-      </footer>
+
     </div>
   );
 };
