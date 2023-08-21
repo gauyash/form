@@ -11,8 +11,9 @@ const Summary = () => {
       />
 
       <Bill />
-      <footer className="mt-32">
-        <button className="p-4 px-8 font-medium rounded-lg">Next Step</button>
+      <footer className="mt-32 flex items-center justify-between">
+        <Link to="/add-ons" className="back-button font-medium">Go Back</Link>
+        <Link to="/thankyou" className="forward-button p-4 px-8 font-medium rounded-lg">Confirm</Link>
       </footer>
     </div>
   );

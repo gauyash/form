@@ -16,18 +16,17 @@ const Context = ({ children }) => {
     },
   });
 
-  const[isSwitchMonthly,setIsSwitchMonthly]=useState(true)
-
+  const [isSwitchMonthly, setIsSwitchMonthly] = useState(true);
 
   const navigate = useNavigate();
 
   const { pathname } = useLocation();
-
   function handleSubmit(e) {
     e.preventDefault();
     if (pathname === "/") navigate("/plan");
-    else if(pathname==="/plan") navigate("/add-ons")
-    else if(pathname==="/add-ons") navigate("/summary")
+    else if (pathname === "/plan") {
+      if (formData.plan != "") navigate("/add-ons");
+    } else if (pathname === "/add-ons") navigate("/summary");
   }
 
   function handleChange(e) {
@@ -63,8 +62,8 @@ const Context = ({ children }) => {
     });
   }
 
-  function handleSwitch(){
-    setIsSwitchMonthly(prevSwitchState=> !prevSwitchState)
+  function handleSwitch() {
+    setIsSwitchMonthly((prevSwitchState) => !prevSwitchState);
   }
 
   const contextValue = {
@@ -74,7 +73,7 @@ const Context = ({ children }) => {
     handleAddOns,
     handlePlanSelection,
     handleSwitch,
-    isSwitchMonthly
+    isSwitchMonthly,
   };
 
   return <Step.Provider value={contextValue}>{children}</Step.Provider>;

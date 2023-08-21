@@ -53,7 +53,7 @@ const FormPersonal = () => {
         />
       </div>
       <footer className="mt-32">
-        <button className="p-4 px-8 font-medium rounded-lg">Next Step</button>
+        <button className="forward-button p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </form>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { globalContext } from "../Context";
-
+import { Link } from "react-router-dom";
 const FormAddOns = () => {
   const { formData, handleSubmit, handleAddOns } = globalContext();
 
@@ -76,8 +76,9 @@ const FormAddOns = () => {
           </div>
         </div>
       </div>
-      <footer className="mt-32">
-        <button className="p-4 px-8 font-medium rounded-lg">Next Step</button>
+      <footer className="mt-32 flex items-center justify-between">
+        <Link to="/plan" className="back-button font-medium">Go Back</Link>
+        <button className="forward-button p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </form>
   );

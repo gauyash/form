@@ -139,7 +139,7 @@ footer {
     }
   }
 
-  button {
+  .forward-button {
     background-color: var(--Marine-blue);
     color: var(--Light-gray);
     transition: background-color 0.3s ease-in-out;
@@ -147,6 +147,12 @@ footer {
     &:hover {
       background-color: var(--Purplish-blue);
     }
+  }
+
+  .back-button{
+    color: var(--Cool-gray);
+    background-color: var(--White);
+    font-size: 1.8rem;
   }
 }
 
@@ -287,4 +293,10 @@ footer {
 
 .free{
   color: var(--Marine-blue);
+}
+
+
+.plan-selected{
+  color: var(--Marine-blue) !important;
+  font-weight: 500;
 }
