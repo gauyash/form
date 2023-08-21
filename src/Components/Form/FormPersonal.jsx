@@ -1,6 +1,8 @@
 import React from "react";
+import { globalContext } from "../Context";
 
-const FormPersonal = ({handleSubmit, handleChange,formData}) => {
+const FormPersonal = () => {
+  const { handleSubmit, handleChange, formData } = globalContext();
   return (
     <form onSubmit={handleSubmit} className="flex flex-col gap-8">
       <div className="flex flex-col">
@@ -8,7 +10,7 @@ const FormPersonal = ({handleSubmit, handleChange,formData}) => {
           Name
         </label>
         <input
-        onChange={handleChange}
+          onChange={handleChange}
           required
           className="p-5"
           name="username"
@@ -24,7 +26,7 @@ const FormPersonal = ({handleSubmit, handleChange,formData}) => {
           Email Address
         </label>
         <input
-        onChange={handleChange}
+          onChange={handleChange}
           required
           className="p-5"
           type="email"
@@ -40,7 +42,7 @@ const FormPersonal = ({handleSubmit, handleChange,formData}) => {
           Phone Number
         </label>
         <input
-        onChange={handleChange}
+          onChange={handleChange}
           required
           className="p-5"
           type="number"
@@ -51,10 +53,7 @@ const FormPersonal = ({handleSubmit, handleChange,formData}) => {
         />
       </div>
       <footer className="mt-32">
-        <button 
-        className="p-4 px-8 font-medium rounded-lg">
-          Next Step
-        </button>
+        <button className="p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </form>
   );

@@ -1,45 +1,52 @@
 import React from "react";
+import { globalContext } from "../Context";
 
-const FormPlan = ({ formData, handlePlanSelection, handleSubmit }) => {
+const FormPlan = () => {
+  const { formData, handlePlanSelection, handleSubmit, handleSwitch,isSwitchMonthly } =
+    globalContext();
+
   return (
     <form className="form-plan">
       <div className="plan">
         <div
-          onClick={() => handlePlanSelection("arcade")}
+          onClick={() => handlePlanSelection(isSwitchMonthly ?"arcade-monthly":"arcade-yearly")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.plan === "arcade" ? "selected" : ""
           }`}
         >
           <img src="/assets/images/icon-arcade.svg" alt="" />
-          <div className="flex flex-col">
-            <span className="card-title font-semibold text-3xl">Arcade</span>
-            <span className="card-price">$9/mo</span>
+          <div className="flex flex-col gap-1">
+            <span className="card-title font-semibold text-4xl">Arcade</span>
+            <span className="card-price font-semibold text-3xl py-1">{isSwitchMonthly ?"$9/mo":"$90/yr"}</span>
+            {!isSwitchMonthly && <span className="free">2 months free</span> }
           </div>
         </div>
 
         <div
-          onClick={() => handlePlanSelection("advance")}
+          onClick={() => handlePlanSelection(isSwitchMonthly ?"advance-monthly":"advance-yearly")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.plan === "advance" ? "selected" : ""
           }`}
         >
           <img src="/assets/images/icon-advanced.svg" alt="" />
-          <div className="flex flex-col">
-            <span className="card-title font-semibold text-3xl">Advance</span>
-            <span className="card-price">$12/mo</span>
+          <div className="flex flex-col gap-1">
+            <span className="card-title font-semibold text-4xl">Advance</span>
+            <span className="card-price font-semibold text-3xl py-1">{isSwitchMonthly ?"$12/mo":"$120/yr"}</span>
+            {!isSwitchMonthly && <span className="free">2 months free</span> }
           </div>
         </div>
 
         <div
-          onClick={() => handlePlanSelection("pro")}
+          onClick={() => handlePlanSelection(isSwitchMonthly ?"pro-monthly":"pro-yearly")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.plan === "pro" ? "selected" : ""
           }`}
         >
           <img src="/assets/images/icon-pro.svg" alt="" />
-          <div className="flex flex-col">
-            <span className="card-title font-semibold text-3xl">Pro</span>
-            <span className="card-price">$15/mo</span>
+          <div className="flex flex-col gap-1">
+            <span className="card-title font-semibold text-4xl">Pro</span>
+            <span className="card-price font-semibold text-3xl py-1">{isSwitchMonthly ?"$15/mo":"$150/yr"}</span>
+            {!isSwitchMonthly && <span className="free">2 months free</span> }
           </div>
         </div>
       </div>
@@ -47,7 +54,7 @@ const FormPlan = ({ formData, handlePlanSelection, handleSubmit }) => {
       <div className="switch-box flex gap-6 rounded-lg justify-center">
         <p>Monthly</p>
         <div className="switch-button">
-          <input type="checkbox" id="toggle" />
+          <input onClick={handleSwitch} type="checkbox" id="toggle" />
           <label htmlFor="toggle" className="switch"></label>
         </div>
         <p>Yearly</p>

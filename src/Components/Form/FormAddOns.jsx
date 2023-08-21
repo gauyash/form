@@ -1,16 +1,24 @@
 import React from "react";
+import { globalContext } from "../Context";
 
-const FormAddOns = ({ formData, handleAddOns }) => {
+const FormAddOns = () => {
+  const { formData, handleSubmit, handleAddOns } = globalContext();
+
   return (
-    <form className="form-plan">
+    <form onSubmit={handleSubmit} className="form-plan">
       <div className="plan add-ons">
         <div
           onClick={() => handleAddOns("service")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.includes("service") ? "selected" : ""
+            formData.addOns.service === true ? "selected" : ""
           }`}
         >
-          <input type="checkbox" name="" id="" />
+          <input
+            checked={formData.addOns.service}
+            type="checkbox"
+            name=""
+            id=""
+          />
           <div className="flex items-center justify-between ml-7">
             <div className="flex flex-col">
               <span className="card-title font-semibold text-3xl">
@@ -25,10 +33,15 @@ const FormAddOns = ({ formData, handleAddOns }) => {
         <div
           onClick={() => handleAddOns("storage")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.includes("storage") ? "selected" : ""
+            formData.addOns.storage === true ? "selected" : ""
           }`}
         >
-          <input type="checkbox" name="" id="" />
+          <input
+            checked={formData.addOns.storage}
+            type="checkbox"
+            name=""
+            id=""
+          />
           <div className="flex items-center justify-between ml-7">
             <div className="flex flex-col">
               <span className="card-title font-semibold text-3xl">
@@ -43,10 +56,15 @@ const FormAddOns = ({ formData, handleAddOns }) => {
         <div
           onClick={() => handleAddOns("profile")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.includes("profile") ? "selected" : ""
+            formData.addOns.profile === true ? "selected" : ""
           }`}
         >
-          <input type="checkbox" name="" id="" />
+          <input
+            checked={formData.addOns.profile}
+            type="checkbox"
+            name=""
+            id=""
+          />
           <div className="flex items-center justify-between ml-7">
             <div className="flex flex-col">
               <span className="card-title font-semibold text-3xl">

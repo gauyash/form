@@ -212,6 +212,7 @@ footer {
     height: 2.2rem;
     background-color: var(--Marine-blue);
     border-radius: 2rem;
+    cursor: pointer;
 
     &::after {
       content: "";
@@ -282,4 +283,8 @@ footer {
 .selected{
   background-color: var(--Magnolia);
   border-color: var(--Pastel-blue);
+}
+
+.free{
+  color: var(--Marine-blue);
 }

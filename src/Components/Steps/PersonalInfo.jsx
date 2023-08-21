@@ -1,11 +1,7 @@
 import React from "react";
 import StepInfo from "../StepInfo";
 import FormPersonal from "../Form/FormPersonal";
-const PersonalInfo = ({formData,handleChange,handleSubmit}) => {
-
-  console.log(formData);
-
-
+const PersonalInfo = () => {
   return (
     <div className="box rounded-lg">
       <div>
@@ -14,9 +10,8 @@ const PersonalInfo = ({formData,handleChange,handleSubmit}) => {
           title="Please provide your name, email address, and phone number."
         />
 
-        <FormPersonal formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
+        <FormPersonal />
       </div>
-
     </div>
   );
 };

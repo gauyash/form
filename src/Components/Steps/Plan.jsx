@@ -1,8 +1,7 @@
 import React from "react";
 import StepInfo from "../StepInfo";
 import FormPlan from "../Form/FormPlan";
-const Plan = ({ handleSubmit, handleChange, formData,handlePlanSelection }) => {
-  console.log(formData);
+const Plan = () => {
   return (
     <div className="box rounded-lg">
       <StepInfo
@@ -10,12 +9,7 @@ const Plan = ({ handleSubmit, handleChange, formData,handlePlanSelection }) => {
         title="You have the option of monthly or yearly billing."
       />
 
-      <FormPlan
-        handleSubmit={handleSubmit}
-        handleChange={handleChange}
-        formData={formData}
-        handlePlanSelection={handlePlanSelection}
-      />
+      <FormPlan />
     </div>
   );
 };

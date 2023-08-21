@@ -12,9 +12,7 @@ const Summary = () => {
 
       <Bill />
       <footer className="mt-32">
-        <Link to="/thankyou" className="p-4 px-8 font-medium rounded-lg">
-          Next Step
-        </Link>
+        <button className="p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </div>
   );
