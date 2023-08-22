@@ -84,8 +84,8 @@ const FormPlan = () => {
       <div className="switch-box flex gap-6 rounded-lg justify-center">
         <p className={`${isSwitchMonthly ? "plan-selected" : ""}`}>Monthly</p>
         <div className="switch-button">
-          <input onClick={handleSwitch} type="checkbox" id="toggle" />
-          <label htmlFor="toggle" className="switch"></label>
+          <input onClick={handleSwitch}  checked={!isSwitchMonthly} type="checkbox" id="toggle" />
+          <label htmlFor="toggle"  className="switch"></label>
         </div>
         <p className={`${!isSwitchMonthly ? "plan-selected" : ""}`}>Yearly</p>
       </div>

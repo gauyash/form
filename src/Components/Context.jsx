@@ -12,18 +12,15 @@ const Context = ({ children }) => {
     addOns: {
       service: {
         isInterested:false,
-        price:null,
-        feature:""
+        feature:"service"
       },
       storage: {
         isInterested:false,
-        price:null,
-        feature:""
+        feature:"storage"
       },
       profile: {
         isInterested:false,
-        price:null,
-        feature:""
+        feature:"profile"
       },
     },
   });
@@ -62,7 +59,7 @@ const Context = ({ children }) => {
 
   console.log(formData);
 
-  function handleAddOns(addOn,amount,addOnName) {
+  function handleAddOns(addOn) {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
@@ -71,8 +68,6 @@ const Context = ({ children }) => {
           [addOn]: {
             ...prevFormData.addOns[addOn],
            isInterested: !prevFormData.addOns[addOn].isInterested,
-           price:amount,
-           feature:addOnName
           },
         },
       };

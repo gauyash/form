@@ -2,13 +2,13 @@ import React from "react";
 import { globalContext } from "../Context";
 import { Link } from "react-router-dom";
 const FormAddOns = () => {
-  const { formData, handleSubmit, handleAddOns } = globalContext();
+  const { formData, handleSubmit, handleAddOns ,isSwitchMonthly} = globalContext();
 
   return (
     <form onSubmit={handleSubmit} className="form-plan">
       <div className="plan add-ons">
         <div
-          onClick={() => handleAddOns("service",1,"Online Service")}
+          onClick={() => handleAddOns("service")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.addOns.service.isInterested === true ? "selected" : ""
           }`}
@@ -26,12 +26,12 @@ const FormAddOns = () => {
               </span>
               <span className="card-price">Access to multiplayer games</span>
             </div>
-            <span className="card-price">+ $1/mo</span>
+            <span className="card-price">{`+${isSwitchMonthly ? "$1/mo":"$10/yr"}`}</span>
           </div>
         </div>
 
         <div
-          onClick={() => handleAddOns("storage",2,"Larger Storage")}
+          onClick={() => handleAddOns("storage")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.addOns.storage.isInterested === true ? "selected" : ""
           }`}
@@ -49,12 +49,12 @@ const FormAddOns = () => {
               </span>
               <span className="card-price">Extra 1TB of cloud save</span>
             </div>
-            <span className="card-price">$2/mo</span>
+            <span className="card-price">{`+${isSwitchMonthly ? "$2/mo":"$20/yr"}`}</span>
           </div>
         </div>
 
         <div
-          onClick={() => handleAddOns("profile",2,"Customizable Profile")}
+          onClick={() => handleAddOns("profile")}
           className={`card-box flex rounded-2xl gap-5 ${
             formData.addOns.profile.isInterested === true ? "selected" : ""
           }`}
@@ -72,7 +72,7 @@ const FormAddOns = () => {
               </span>
               <span className="card-price">Custom theme on your profile</span>
             </div>
-            <span className="card-price">$2/mo</span>
+            <span className="card-price">{`+${isSwitchMonthly ? "$2/mo":"$20/yr"}`}</span>
           </div>
         </div>
       </div>
