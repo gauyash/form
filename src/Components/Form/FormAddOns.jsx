@@ -8,13 +8,13 @@ const FormAddOns = () => {
     <form onSubmit={handleSubmit} className="form-plan">
       <div className="plan add-ons">
         <div
-          onClick={() => handleAddOns("service")}
+          onClick={() => handleAddOns("service",1,"Online Service")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.service === true ? "selected" : ""
+            formData.addOns.service.isInterested === true ? "selected" : ""
           }`}
         >
           <input
-            checked={formData.addOns.service}
+            checked={formData.addOns.service.isInterested}
             type="checkbox"
             name=""
             id=""
@@ -31,13 +31,13 @@ const FormAddOns = () => {
         </div>
 
         <div
-          onClick={() => handleAddOns("storage")}
+          onClick={() => handleAddOns("storage",2,"Larger Storage")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.storage === true ? "selected" : ""
+            formData.addOns.storage.isInterested === true ? "selected" : ""
           }`}
         >
           <input
-            checked={formData.addOns.storage}
+            checked={formData.addOns.storage.isInterested}
             type="checkbox"
             name=""
             id=""
@@ -54,13 +54,13 @@ const FormAddOns = () => {
         </div>
 
         <div
-          onClick={() => handleAddOns("profile")}
+          onClick={() => handleAddOns("profile",2,"Customizable Profile")}
           className={`card-box flex rounded-2xl gap-5 ${
-            formData.addOns.profile === true ? "selected" : ""
+            formData.addOns.profile.isInterested === true ? "selected" : ""
           }`}
         >
           <input
-            checked={formData.addOns.profile}
+            checked={formData.addOns.profile.isInterested}
             type="checkbox"
             name=""
             id=""

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { globalContext } from "./Context";
 
 const Bill = () => {
+  const { formData } = globalContext();
 
   const planData = {
     9: {
@@ -18,39 +19,48 @@ const Bill = () => {
       plan: "Pro",
     },
 
-    90:{ 
-    time:  "Yearly",
-    plan:"Arcade"
+    90: {
+      time: "Yearly",
+      plan: "Arcade",
     },
 
-    120:{
-      time:"Yearly",
-      plan:"Advance"
-    } ,
+    120: {
+      time: "Yearly",
+      plan: "Advance",
+    },
 
     150: {
-      time:"Yearly",
-      plan:"Pro"
-    }
+      time: "Yearly",
+      plan: "Pro",
+    },
   };
 
-  const { formData } = globalContext();
-  
+  const interestedAddOns = Object.values(formData.addOns).filter(
+    (addOn) => addOn.isInterested
+  );
+
+  const interestedAddOnsElements = interestedAddOns.map((item) => {
+    return (
+      <li className="flex">
+        <p className="text-3xl">{item.feature}</p>
+        <p className="price text-3xl">{`+$${item.price}/mo`}</p>
+      </li>
+    );
+  });
+
   return (
     <div className="bill">
       <ul className="rounded-3xl mt-8">
         <li className="flex">
           <div className="flex flex-col">
-            <h3 className="text-4xl font-bold">{`${planData[formData.plan].plan}(${planData[formData.plan].time})`}</h3>
+            <h3 className="text-4xl font-bold">{`${
+              planData[formData.plan].plan
+            }(${planData[formData.plan].time})`}</h3>
             <Link to="/">change</Link>
           </div>
           <h3 className="price text-4xl font-bold">{`$${formData.plan}/mo`}</h3>
         </li>
-
-        <li className="flex">
-          <p className="text-3xl">Customizable Profile</p>
-          <p className="price text-3xl">+$2/mo</p>
-        </li>
+        {interestedAddOnsElements}
       </ul>
 
       <div className="total flex">

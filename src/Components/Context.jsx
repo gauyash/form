@@ -10,9 +10,21 @@ const Context = ({ children }) => {
     usernumber: "",
     plan: "",
     addOns: {
-      service: false,
-      storage: false,
-      profile: false,
+      service: {
+        isInterested:false,
+        price:null,
+        feature:""
+      },
+      storage: {
+        isInterested:false,
+        price:null,
+        feature:""
+      },
+      profile: {
+        isInterested:false,
+        price:null,
+        feature:""
+      },
     },
   });
 
@@ -50,13 +62,18 @@ const Context = ({ children }) => {
 
   console.log(formData);
 
-  function handleAddOns(value) {
+  function handleAddOns(addOn,amount,addOnName) {
     setFormData((prevFormData) => {
       return {
         ...prevFormData,
         addOns: {
           ...prevFormData.addOns,
-          [value]: !prevFormData.addOns[value],
+          [addOn]: {
+            ...prevFormData.addOns[addOn],
+           isInterested: !prevFormData.addOns[addOn].isInterested,
+           price:amount,
+           feature:addOnName
+          },
         },
       };
     });
