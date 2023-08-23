@@ -57,7 +57,6 @@ const Context = ({ children }) => {
     });
   }
 
-  console.log(formData);
 
   function handleAddOns(addOn) {
     setFormData((prevFormData) => {

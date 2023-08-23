@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { globalContext } from "./Context";
 
 const Bill = () => {
-  const { formData,isSwitchMonthly } = globalContext();
+  const { formData, isSwitchMonthly } = globalContext();
 
   const planData = {
     9: {
@@ -35,39 +35,45 @@ const Bill = () => {
     },
   };
 
-  const addOnData={
+  const addOnData = {
     service: {
-      price:isSwitchMonthly?1:10,
+      price: isSwitchMonthly ? 1 : 10,
       feature: "Online Service",
     },
     storage: {
-      price:isSwitchMonthly?2:20,
+      price: isSwitchMonthly ? 2 : 20,
       feature: "Large Storage",
     },
     profile: {
-      price:isSwitchMonthly?2:20,
+      price: isSwitchMonthly ? 2 : 20,
       feature: "Custom Profile",
     },
-  }
+  };
 
   const interestedAddOns = Object.values(formData.addOns).filter(
     (addOn) => addOn.isInterested
   );
-    
-    const interestedAddOnsElements=interestedAddOns.map(item=>addOnData[item.feature])
-    console.log(interestedAddOnsElements);
-    const period=isSwitchMonthly ? "/mo":"/yr"
-    
-    const interestedAddOnsPrice=interestedAddOnsElements.reduce((acc,curr)=>acc + curr.price  ,0)
 
-  const interestedAddOnsElementsArray = interestedAddOnsElements.map((item,index) => {
-    return (
-      <li key={index} className="flex">
-        <p className="text-3xl">{item.feature}</p>
-        <p className="price text-3xl">{`+$${item.price}${period}`}</p>
-      </li>
-    );
-  });
+  const interestedAddOnsElements = interestedAddOns.map(
+    (item) => addOnData[item.feature]
+  );
+  const period = isSwitchMonthly ? "/mo" : "/yr";
+
+  const interestedAddOnsPrice = interestedAddOnsElements.reduce(
+    (acc, curr) => acc + curr.price,
+    0
+  );
+
+  const interestedAddOnsElementsArray = interestedAddOnsElements.map(
+    (item, index) => {
+      return (
+        <li key={index} className="flex">
+          <p className="text-3xl">{item.feature}</p>
+          <p className="price text-3xl">{`+$${item.price}${period}`}</p>
+        </li>
+      );
+    }
+  );
 
   return (
     <div className="bill">
@@ -85,8 +91,12 @@ const Bill = () => {
       </ul>
 
       <div className="total flex">
-        <p className="text-3xl">{`Total(per ${isSwitchMonthly?"month" :"yearly"})`}</p>
-        <p className="total-price font-bold text-3xl">{`$${interestedAddOnsPrice + formData.plan}${period}`}</p>
+        <p className="text-3xl">{`Total(per ${
+          isSwitchMonthly ? "month" : "yearly"
+        })`}</p>
+        <p className="total-price font-bold text-3xl">{`$${
+          interestedAddOnsPrice + formData.plan
+        }${period}`}</p>
       </div>
     </div>
   );
