@@ -90,7 +90,7 @@ const FormPlan = () => {
         <p className={`${!isSwitchMonthly ? "plan-selected" : ""}`}>Yearly</p>
       </div>
       <footer className="mt-32 flex items-center justify-between">
-        <Link to="/" className="back-button font-medium">Go Back</Link>
+        <Link to="/form" className="back-button font-medium">Go Back</Link>
         <button className="forward-button p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </form>

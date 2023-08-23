@@ -10,7 +10,7 @@ import ThankYou from "./Components/ThankYou";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/form" element={<MainLayout />}>
         <Route index element={<PersonalInfo />} />
         <Route path="plan" element={<Plan />} />
         <Route path="add-ons" element={<AddOns />} />

@@ -32,10 +32,10 @@ const Context = ({ children }) => {
   const { pathname } = useLocation();
   function handleSubmit(e) {
     e.preventDefault();
-    if (pathname === "/") navigate("/plan");
-    else if (pathname === "/plan") {
-      if (formData.plan != "") navigate("/add-ons");
-    } else if (pathname === "/add-ons") navigate("/summary");
+    if (pathname === "/form") navigate("/form/plan");
+    else if (pathname === "/form/plan") {
+      if (formData.plan != "") navigate("/form/add-ons");
+    } else if (pathname === "/form/add-ons") navigate("/form/summary");
   }
 
   function handleChange(e) {

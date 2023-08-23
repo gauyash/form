@@ -77,7 +77,7 @@ const FormAddOns = () => {
         </div>
       </div>
       <footer className="mt-32 flex items-center justify-between">
-        <Link to="/plan" className="back-button font-medium">Go Back</Link>
+        <Link to="/form/plan" className="back-button font-medium">Go Back</Link>
         <button className="forward-button p-4 px-8 font-medium rounded-lg">Next Step</button>
       </footer>
     </form>
